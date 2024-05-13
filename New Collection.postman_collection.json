@@ -1,0 +1,165 @@
+{
+	"info": {
+		"_postman_id": "0cf95105-8af7-4ccb-88fc-a7d842d4af28",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "33661388"
+	},
+	"item": [
+		{
+			"name": "añadir libro",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Title\": \"titulo 1\",\r\n    \"Author\": \"autor 1\",\r\n    \"Genre\": \"genero A\",\r\n    \"Format\": \"formato A\",\r\n    \"Price\": 11111\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/api/ebook/"
+			},
+			"response": []
+		},
+		{
+			"name": "obtener libros",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/ebook/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"ebook",
+						""
+					],
+					"query": [
+						{
+							"key": "genre",
+							"value": "genero A",
+							"disabled": true
+						},
+						{
+							"key": "author",
+							"value": "autor A",
+							"disabled": true
+						},
+						{
+							"key": "format",
+							"value": "formato A",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar libro",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/ebook/?id=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"ebook",
+						""
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cambiar isavailable",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": "http://localhost:5000/api/ebook/2/change-availability"
+			},
+			"response": []
+		},
+		{
+			"name": "incrementar stock",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Stock\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/api/ebook/1/increment-stock"
+			},
+			"response": []
+		},
+		{
+			"name": "comprar libro",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Id\": 1,\r\n    \"Quantity\": 2,\r\n    \"Total\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/api/ebook/purchase"
+			},
+			"response": []
+		},
+		{
+			"name": "eliminar libro",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/ebook/?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"ebook",
+						""
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
